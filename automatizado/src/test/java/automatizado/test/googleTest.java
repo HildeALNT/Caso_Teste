@@ -1,7 +1,12 @@
 package automatizado.test;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class googleTest {
@@ -21,6 +26,14 @@ public class googleTest {
     @Test
     public void testar_chrome(){
         iniciar();
+
+        WebElement inputPesquisa =  driver.findElement(By.name("q"));
+        inputPesquisa.sendKeys("batata frita" + Keys.ENTER);
+
+        String resultado = driver.findElement(By.id("hdtb-tls")).getText();
+
+        assertTrue(resultado, resultado.contains("Ferramentas"));
+
         driver.quit();
     };
 
