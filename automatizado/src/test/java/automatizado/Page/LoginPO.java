@@ -18,8 +18,13 @@ public class LoginPO extends BasePO {
     @FindBy(css ="form>div>span")
     public WebElement span;
 
+    //construtor
     public LoginPO(WebDriver driver) {
         super(driver);
+    }
+
+    public String obterMSG(){
+        return span.getText();
     }
     
 }
