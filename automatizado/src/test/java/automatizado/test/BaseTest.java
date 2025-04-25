@@ -9,12 +9,11 @@ public abstract class BaseTest {
     
 
     protected static WebDriver driver;
-    private static final String URL_BASE = "https://www.google.com.br/?hl=pt-BR";
-    private static final String CAMINHO_DRIVER = "src/test/java/automatizado/resource/chromedriver.exe"; 
+    private static final String URL_BASE = "file:///C:/Users/pcnov/OneDrive/%C3%81rea%20de%20Trabalho/controle-de-produtos/sistema/login.html";
 
     @BeforeClass
     public static void iniciar(){
-        System.setProperty("webdriver.chrome.driver",CAMINHO_DRIVER);
+        System.setProperty("webdriver.chrome.driver", "src/test/java/automatizado/resource/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(URL_BASE);
